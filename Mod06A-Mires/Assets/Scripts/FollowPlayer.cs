@@ -6,6 +6,7 @@ public class FollowPlayer : MonoBehaviour
 {
 
     public GameObject player;
+    public GameObject cam;
     private Vector3 offset = new Vector3(0, 5, -7);
 
     // Start is called before the first frame update
@@ -17,6 +18,11 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.position = player.transform.position + offset;
+        //original code in green. disable current and enable other
+        //transform.position = player.transform.position + offset;
+        transform.position = cam.transform.position;
+
+        //extra code I added, is not needed.
+        transform.rotation = player.transform.rotation;
     }
 }
